@@ -1,0 +1,747 @@
+/* ------------------------------------------------------------
+    General styles
+-------------------------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.column {
+    float: left;
+}
+
+.clearfix::before,
+.clearfix::after,
+.container::before,
+.container::after,
+.logo-footer, /* ---- zbędny wpis przy kolejnych szablonach */
+[class*='layout-']::before, /* i tutaj selektor szuka wszystkiego co ma takiego stringa. */
+[class*='layout-']::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.layout-4-cols > .column { /*----------- można zrobić elastyczny selektor tzw. WILDCARD. Zobacz wyżej */
+    width: 25%;
+}
+
+.layout-3-cols > .column {
+    width: 33.33%;
+}
+
+.layout-2-cols > .column {
+    width: 50%;
+}
+
+.layout-2-cols-asymetr6040 > .column:first-of-type {
+    width: 60%;
+}
+
+.layout-2-cols-asymetr6040 > .column:last-of-type {
+    width: 40%;
+}
+
+img {
+    max-width: 100%;
+}
+
+h2 {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.underline::after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 200px;
+    border: 3px solid rgb(35, 200, 170);
+}
+
+.gray-text {
+    color: rgb(143, 143, 143)
+}
+
+/* ------------------------------------------------------------
+    Site header
+-------------------------------------------------------------*/
+
+.green-button {
+    background-color: rgb(35, 200, 170);
+    text-decoration: none;
+    color: white;
+}
+
+.white-button {
+    background-color: white;
+    text-decoration: none;
+    color: rgb(35, 200, 170);
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.green-word {
+    color: rgb(35, 200, 170);
+}
+
+.white-word {
+    color: rgb(255, 255, 255);
+}
+
+.site-header p {
+    padding-left: 100px;
+    font-weight: 600;
+}
+
+.site-header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.site-nav {
+    text-align: right;
+}
+
+.site-nav ul {
+    list-style: none;
+}
+
+.site-nav li {
+    display: inline-block;
+    padding-right: 50px;
+}
+
+.site-nav a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.main-menu {
+    position: relative;
+}
+
+.main-menu a:hover + ul {
+    display: block;
+
+}
+
+.sub-menu {
+    display: none;
+    padding: 5px 5px;
+    text-align: left;
+    top: 50px;
+    left: -25px;
+    position: absolute;
+    list-style: none;
+    background-color: black;
+    width: 150px;
+    font-size: 14px;
+}
+
+.sub-menu:before {
+    display: table;
+    position: absolute;
+    content: '';
+    top: -15px;
+    left: 50px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 15px 15px 15px;
+    border-color: transparent transparent #000000 transparent;
+}
+
+
+.hero-section {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+80,f6f6f6+80,ededed+100 */
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 80%, #f6f6f6 80%, #ededed 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 80%,#f6f6f6 80%,#ededed 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 80%,#f6f6f6 80%,#ededed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+}
+
+.hero-section .container {
+    height: 400px;
+    position: relative;
+}
+
+#prevPicture {
+    cursor: pointer;
+    color: rgb(35, 200, 170);
+    font-size: 80px;
+    position: absolute;
+    top:50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+#nextPicture {
+    cursor: pointer;
+    color: rgb(35, 200, 170);
+    font-size: 80px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.slider ul{
+    list-style: none;
+}
+
+.slider li{
+    display: none;
+}
+
+.slider .visible{
+    display: inline-block;
+}
+
+.hero-text {
+    padding-right: 100px;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.hero-text p {
+    margin: 20px 0;
+}
+
+.hero-button {
+    text-decoration: none;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 15px;
+}
+
+
+/* ------------------------------------------------------------
+    Chair section
+-------------------------------------------------------------*/
+
+.chairs-section {
+    padding-top: 2em;
+}
+/* test-------------------------------------------------------------------------- */
+
+.chair-picture-1,
+.chair-picture-2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.chair-picture-1:hover img,
+.chair-picture-2:hover img
+ {
+    transform: scale(1.1);
+  }
+
+.img1,
+.img2 {
+    max-width: 100%;
+    transition: all 0.3s;
+}
+
+.chair {
+    position: relative;
+}
+
+.hide {
+    display: none;
+}
+
+.image-text-1,
+.image-text-2
+ {
+    padding: 1em 0;
+    width: 330px;
+    margin-top: -70px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.chairs-section .chair-text {
+    padding: 20px 20px;
+    border: 1px solid lightgray;
+}
+
+/* ------------------------------------------------------------
+    Prices section
+-------------------------------------------------------------*/
+
+.prices-section {
+    background-color: rgb(240, 240, 240);
+    padding: 30px 0;
+    margin-top: 30px;
+}
+
+.prices-section .layout-3-cols {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.prices-section .column {
+    padding: 0 20px;
+    text-align: center;
+}
+
+.prices h3 {
+    margin: 1em;
+}
+
+.prices-section h2 {
+    padding-left: 20px;
+}
+
+.prices.uppercase {
+    line-height: 2em;
+    position: relative;
+}
+
+.prices.uppercase div:nth-of-type(even) {
+    background-color: rgb(211, 209, 209);
+}
+
+.prices.uppercase div:nth-of-type(odd) {
+    background-color: rgb(235, 235, 235);
+}
+
+.prices-section .prices{
+    height: 400px;
+    border: 2px solid rgb(163, 163, 163)
+}
+
+.circle-price {
+    margin-left: 35%;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgb(163, 163, 163);
+    border-radius: 50%;
+    font-size: 40px;
+}
+
+.circle-price-sub {
+    font-size: 15px;
+}
+
+.prices-button {
+    position: absolute;
+    bottom: 10px;
+    left: 100px;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+.green-background {
+    background-color: rgb(35, 200, 170);
+}
+
+.layout-3-cols .prices.uppercase:before {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border:1px solid rgb(163, 163, 163);
+    z-index: 2;
+    top: -9%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+}
+
+
+.prices.uppercase:after {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    z-index: 3;
+    top: -6%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(163, 163, 163);
+}
+
+.prices.uppercase.green-background.middle-price:before{
+    position: absolute;
+    display: block;
+    content: '';
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border:1px solid rgb(35, 200, 170);
+    z-index: 3;
+    top: -9%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(35, 200, 170);
+}
+
+.prices.uppercase.green-background.middle-price:after {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    z-index: 3;
+    top: -6%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+}
+
+
+sup { 
+    vertical-align: super;
+    font-size: 10px;
+}
+
+/* ------------------------------------------------------------
+    Cotntact section
+-------------------------------------------------------------*/
+
+.contact-section {
+    height: 500px;
+}
+
+.contact-form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.field-wrap {
+    margin-bottom: 1em;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+}
+
+.field-wrap input {
+    font-size: 25px;
+    padding: 5px;
+    height: 50px;
+}
+
+.field-wrap textarea {
+    font-size: 25px;
+    padding: 5px;
+    height: 200px;
+}
+
+.contact-form-img {
+    margin-left: 50px;
+}
+
+.contact-form-img:nth-of-type(2) {
+    margin-left: 50px;
+    height:50px;
+}
+
+.contact-form-agreed {
+    float: left;
+}
+
+.agreed-button {
+    font-weight: 900;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 50px;
+    background-color: rgb(35, 200, 170);
+    width: 350px;
+    border-radius: 15px;
+}
+
+.agreed-button a {
+    text-decoration: none;
+    color: white;
+    line-height: 3em;
+}
+
+/* ------------------------------------------------------------
+    Footer section
+-------------------------------------------------------------*/
+
+.copyright {
+    line-height: 40px;
+}
+
+.logo-bottom {
+    line-height: 40px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.logo-bottom span {
+    font-weight: 900;
+    color: rgb(126, 126, 126);
+}
+
+/* Kalkulator ----------------------------------------------------------------------- */
+  
+  
+  .application {
+    background-color: #f9f9f9;
+    padding:30px 0;
+    height: 100%;
+  }
+  .application h3 {
+    color: #575757;
+    font-size: 18px;
+  }
+  
+  .application header.align_right{
+    text-align: right;
+  }
+  
+  
+  .inline {
+    display:inline-block;
+    width:33%;
+    padding:14px;
+    vertical-align: top;
+  }
+  
+  
+  .form {
+    margin-top:50px;
+  }
+  .drop_down_list {
+    border:1px solid #8de0d2;
+    width: 100%;
+    height:50px;
+    background-color: white;
+    margin-top:22px;
+    padding: 8px 12px;
+    position: relative;
+  }
+  
+  .list_label {
+    font-size: 30px;
+    color: #e2e2e2;
+    font-family: 'ralewaylight', Arial, Tahoma, sans-serif;
+  }
+  
+  
+  .checkbox {
+    position: relative;
+    padding: 30px 30px 30px 0;
+  }
+  .checkbox input {
+    display: block;
+    opacity: 0;
+    height: 48px;
+    position: absolute;
+    width: 48px;
+    cursor: pointer;
+  }
+  
+  .checkbox label {
+    display: block;
+    padding-left: 65px;
+    position: relative;
+    font-size: 28px;
+    color: #cecece;
+    line-height: 120%;
+    padding-top: 10px;
+    cursor: pointer;
+  }
+  
+  .checkbox label::before, .checkbox label::after {
+    border: 1px solid #27c7ab;
+    content: "";
+    display: block;
+    left: 0;
+    height: 48px;
+    position: absolute;
+    width: 48px;
+    top: 0;
+  }
+  .checkbox label::after {
+    background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20preserveAspectRatio%3D%22xMidYMid%22%20width%3D%2233.875%22%20height%3D%2233%22%20viewBox%3D%220%200%2033.875%2033%22%3E%0A%20%20%3Cpath%20d%3D%22M9.470%2C15.209%20L14.061%2C24.104%20C14.061%2C24.104%2021.522%2C6.026%2033.287%2C-0.000%20C33.000%2C4.304%2031.852%2C8.035%2033.861%2C12.626%20C28.696%2C13.774%2018.078%2C26.687%2014.635%2C33.000%20C9.756%2C26.974%204.017%2C22.382%20-0.000%2C20.948%20L9.470%2C15.209%20Z%22%20fill%3D%22%2327c7ab%22/%3E%0A%3C/svg%3E%0A") no-repeat center;
+    border: 0;
+    display: none;
+  }
+  
+  .checkbox input:checked + label::after {
+    display: block;
+  }
+  
+  
+  .active {
+    background: url('../images/form_ok.jpg');
+    width: 48px;
+    height: 40px;
+  
+  }
+  .inline_text {
+    display: inline-block;
+    width: 228px;
+    vertical-align: top;
+    margin-top: 30px;
+    margin-left: 15px;
+    color: #aeaeae;
+  }
+  .image_part img{
+    margin-top: 110px;
+    margin-left: 38px;
+  }
+  
+  
+  .application .green_bell {
+    background-color: #24baa0;
+    width: 200px;
+    height: 6px;
+    display: inline-block;
+    margin: 5px 0 5px 0;
+  }
+  
+  .summary_panel {
+    background-color: white;
+    width:100%;
+    height:100%;
+    padding:10px;
+    margin-top: 50px;
+  
+  }
+  
+  .application .green_button {
+    background-color: #27c7ab;
+    color: white;
+    text-align:center;
+    text-transform: uppercase;
+    width: 200px;
+    padding: 10px 30px;
+    font-size: 24px;
+    display: inline-block;
+    font-family: 'ralewaymedium', Arial, Tahoma, sans-serif;
+    margin-top: 20px;
+    margin-left: 29px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  .panel_left {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    padding-bottom:10px;
+    border-bottom:1px solid #e7e7e7;
+    height: 150px;
+  }
+  
+  .panel_right {
+    display: inline-block;
+    width: 40%;
+    border-left:1px solid #e7e7e7;
+    text-align: right;
+    vertical-align: top;
+    padding-bottom:10px;
+    border-bottom:1px solid #e7e7e7;
+    height: 150px;
+  }
+  
+  .panel_left h4 , .panel_right h4{
+    color: #24baa0;
+    font-size: 23px;
+  }
+  
+  .panel_left span{
+    margin-top:10px;
+    font-size: 22px;
+    color: #5b5a5a;
+    display: block;
+  }
+  
+  .panel_right span {
+    display: block;
+    font-size: 22px;
+    color: #24baa0;
+    margin-top:10px;
+  }
+  .sum_label{
+    display: inline-block;
+    width: 185px;
+    margin-top: 10px;
+    font-size: 22px;
+    color: #5b5a5a;
+  }
+  
+  .sum {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin-top: 10px;
+    font-size: 22px;
+    color: #24baa0;
+  }
+  
+  .list_arrow {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #24baa0;
+    display:block;
+    position: absolute;
+    right: 14px;
+    top: 20px;
+    cursor: pointer;
+  }
+  
+  .list_panel {
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 288px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    list-style: none;
+    margin: 0;
+    left: 0px;
+    z-index: 2;
+    position: absolute;
+    top: 54px;
+    display: none;
+  }
+  .list_panel li {
+    margin-top:10px;
+    cursor: pointer;
+    color: #585858;
+  }
+  
+  .title {
+    height: 30px;
+  }
+  
+  /* Kalkulator ------------------------------------------------------------------------------------- */
+  
+  
